@@ -56,5 +56,8 @@ jobs:
           pip install build
       - name: Build package
         run: python -m build
-      - name: upload
-        uses: actions/upload-artifact@v6
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-package
+          path: dist/
