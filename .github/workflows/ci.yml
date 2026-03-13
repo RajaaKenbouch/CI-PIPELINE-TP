@@ -39,7 +39,7 @@ jobs:
       - name: Installer les dépendances
         run: pip install -r requirements.txt
       - name: lances les tests
-        run: pytest tests/ -v --cov=app
+        run: PYTHONPATH=$PYTHONPATH:. pytest tests/ -v --cov=app
   build:
     runs-on: ubuntu-latest
     needs: test
